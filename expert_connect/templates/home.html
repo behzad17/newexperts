@@ -113,15 +113,15 @@
 {% else %}
 <div class="no-featured">
   <h2>No Featured Profiles Yet</h2>
-  <p>Be the first to create a profile and get featured!</p>
-  {% if user.is_authenticated %} {% if not user.expertprofile and not
-  user.podcastprofile %}
-  <a href="{% url 'create_profile' %}" class="btn btn-primary"
-    >Create Your Profile</a
-  >
-  {% endif %} {% else %}
-  <a href="{% url 'register' %}" class="btn btn-primary">Register Now</a>
-  {% endif %}
+  <p>Check out our experts and podcasts to discover amazing content!</p>
+  <div class="cta-buttons">
+    <a href="{% url 'experts_list' %}" class="btn btn-primary"
+      >Browse Experts</a
+    >
+    <a href="{% url 'podcasts_list' %}" class="btn btn-secondary"
+      >Browse Podcasts</a
+    >
+  </div>
 </div>
 {% endif %}
 
@@ -216,6 +216,30 @@
     flex: 1;
   }
 
+  .featured-card::before {
+    content: "⭐ Featured";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f39c12;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-content h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+  }
+
   .card-header {
     display: flex;
     justify-content: space-between;
@@ -225,85 +249,127 @@
 
   .card-header h3 {
     margin: 0;
-    font-size: 1.3rem;
-  }
-
-  .card-header h3 a {
     color: #2c3e50;
-    text-decoration: none;
-  }
-
-  .card-header h3 a:hover {
-    color: #3498db;
+    font-size: 1.3rem;
+    flex: 1;
   }
 
   .card-stats {
     display: flex;
     gap: 0.5rem;
-    font-size: 0.9rem;
-    color: #7f8c8d;
+    align-items: center;
   }
 
   .likes-count {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+    background: #f8f9fa;
+    color: #e74c3c;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .card-content h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .expert-card .card-content h3 a:hover {
+    color: #3498db;
+  }
+
+  .podcast-card .card-content h3 a:hover {
+    color: #e74c3c;
+  }
+
+  .card-content p {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
   }
 
   .card-actions {
     display: flex;
     gap: 0.5rem;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
   }
 
   .btn-secondary {
-    background-color: #6c757d;
+    background-color: #95a5a6;
+    color: white;
   }
 
   .btn-secondary:hover {
-    background-color: #5a6268;
+    background-color: #7f8c8d;
+    transform: translateY(-1px);
   }
 
   .no-featured {
     text-align: center;
     padding: 3rem;
-    background: white;
+    background: #f8f9fa;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #dee2e6;
   }
 
   .no-featured h2 {
-    color: #2c3e50;
+    color: #6c757d;
     margin-bottom: 1rem;
   }
 
   .no-featured p {
-    color: #7f8c8d;
+    color: #6c757d;
     margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
+    .home-header h1 {
+      font-size: 2rem;
+    }
+
     .featured-grid {
       grid-template-columns: 1fr;
-    }
-
-    .featured-card {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .card-image {
-      margin: 0 auto 1rem auto;
-    }
-
-    .card-header {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     .card-actions {
-      justify-content: center;
+      flex-direction: column;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
