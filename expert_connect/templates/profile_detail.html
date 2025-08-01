@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ profile.name }}</h2>
+{% if profile.bio %}
+    <p>{{ profile.bio }}</p>
+{% elif profile.description %}
+    <p>{{ profile.description }}</p>
+{% endif %}
+
+<p>Likes: <span id="likes-count">{{ likes }}</span></p>
+<p>Favorites: <span id="favorites-count">{{ favorites }}</span></p>
+
+{% if user.is_authenticated %}
+    <button id="like-btn">Like</button>
+    <button id="favorite-btn">Favorite</button>
+{% endif %}
+
+<hr>
+
+<h3>Comments</h3>
+{% for comment in comments %}
+    <p><strong>{{ comment.user.username }}</strong>: {{ comment.text }}</p>
+{% empty %}
+    <p>No comments yet.</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <form action="{% url 'add_comment' profile.user.id %}" method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit">Add Comment</button>
+    </form>
+{% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const likeBtn = document.getElementById("like-btn");
+    const favoriteBtn = document.getElementById("favorite-btn");
+
+    if (likeBtn) {
+        likeBtn.addEventListener("click", function() {
+            fetch("{% url 'like_toggle' profile.user.id %}", {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": "{{ csrf_token }}",
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("likes-count").textContent = data.likes;
+            });
+        });
+    }
+
+    if (favoriteBtn) {
+        favoriteBtn.addEventListener("click", function() {
+            fetch("{% url 'favorite_toggle' profile.user.id %}", {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": "{{ csrf_token }}",
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("favorites-count").textContent = data.favorites;
+            });
+        });
+    }
+});
+</script>
+{% endblock %}

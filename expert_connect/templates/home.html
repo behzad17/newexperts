@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to Expert Connect!</h2>
+
+<h3>Featured Experts</h3>
+<ul>
+    {% for expert in featured_experts %}
+        <li><a href="{% url 'profile_detail' expert.user.id %}">{{ expert.name }}</a></li>
+    {% empty %}
+        <li>No featured experts yet.</li>
+    {% endfor %}
+</ul>
+
+<h3>Featured Podcasts</h3>
+<ul>
+    {% for podcast in featured_podcasts %}
+        <li><a href="{% url 'profile_detail' podcast.user.id %}">{{ podcast.name }}</a></li>
+    {% empty %}
+        <li>No featured podcasts yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Experts</h2>
+<ul>
+    {% for expert in experts %}
+        <li><a href="{% url 'profile_detail' expert.user.id %}">{{ expert.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Podcasts</h2>
+<ul>
+    {% for podcast in podcasts %}
+        <li><a href="{% url 'profile_detail' podcast.user.id %}">{{ podcast.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
