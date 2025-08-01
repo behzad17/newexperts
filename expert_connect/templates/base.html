@@ -33,25 +33,79 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
       header h1 {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 0.75rem;
-        text-align: center;
+        margin: 0;
+        flex: 1;
+      }
+
+      /* Hamburger Menu Button */
+      .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+      }
+
+      .hamburger:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .hamburger .line {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+      }
+
+      /* Hamburger Animation */
+      .hamburger.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
       }
 
       /* Mobile Navigation */
       nav {
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      nav.active {
+        display: flex;
       }
 
       nav a {
         color: white;
         text-decoration: none;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         border-radius: 6px;
         font-weight: 500;
         transition: background-color 0.2s ease;
@@ -221,16 +275,30 @@
           padding: 1.5rem;
         }
 
+        .header-container {
+          flex-wrap: nowrap;
+        }
+
         header h1 {
           font-size: 1.8rem;
-          margin-bottom: 1rem;
+          margin-bottom: 0;
+        }
+
+        /* Hide hamburger on tablet and up */
+        .hamburger {
+          display: none;
         }
 
         nav {
+          display: flex !important;
           flex-direction: row;
           justify-content: center;
           flex-wrap: wrap;
           gap: 1rem;
+          width: auto;
+          margin-top: 0;
+          padding-top: 0;
+          border-top: none;
         }
 
         nav a {
@@ -282,7 +350,7 @@
 
         header h1 {
           font-size: 2rem;
-          margin-bottom: 1.25rem;
+          margin-bottom: 0;
         }
 
         nav {
@@ -298,24 +366,19 @@
         button,
         .btn {
           padding: 0.875rem 2rem;
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
 
         input,
         textarea,
         select {
           padding: 1rem;
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
       }
 
       /* Large Desktop Styles (1440px and up) */
       @media (min-width: 1440px) {
-        main {
-          max-width: 1200px;
-          padding: 4rem;
-        }
-
         header {
           padding: 2.5rem;
         }
@@ -323,68 +386,82 @@
         header h1 {
           font-size: 2.2rem;
         }
-      }
 
-      /* Touch-friendly improvements */
-      @media (hover: none) and (pointer: coarse) {
+        nav {
+          gap: 2rem;
+        }
+
+        main {
+          padding: 4rem;
+          max-width: 1200px;
+          margin: 3rem auto;
+        }
+
         button,
         .btn {
-          padding: 1rem 1.5rem;
+          padding: 1rem 2.5rem;
           font-size: 1.1rem;
-          min-width: 140px;
-        }
-
-        nav a {
-          padding: 0.75rem 1rem;
-        }
-
-        .create-profile-link {
-          padding: 0.875rem 1rem;
-        }
-
-        .logout-btn {
-          padding: 0.875rem 1rem;
         }
 
         input,
         textarea,
         select {
-          padding: 1rem;
+          padding: 1.125rem;
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Touch-friendly improvements */
+      @media (hover: none) and (pointer: coarse) {
+        .hamburger {
+          padding: 0.75rem;
+        }
+
+        nav a {
+          padding: 1rem 1.25rem;
+          font-size: 1.1rem;
+        }
+
+        .create-profile-link {
+          padding: 1rem 1.25rem;
+          font-size: 1.1rem;
+        }
+
+        .logout-btn {
+          padding: 1rem 1.25rem;
           font-size: 1.1rem;
         }
       }
 
       /* High contrast mode support */
       @media (prefers-contrast: high) {
-        header {
-          border-bottom: 2px solid #000;
+        .hamburger .line {
+          background-color: #ffffff;
         }
 
-        button,
-        .btn {
-          border: 2px solid currentColor;
+        nav a {
+          border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        input,
-        textarea,
-        select {
-          border: 2px solid #000;
+        .create-profile-link {
+          border: 2px solid #27ae60;
+        }
+
+        .logout-btn {
+          border: 2px solid #e74c3c;
         }
       }
 
       /* Reduced motion support */
       @media (prefers-reduced-motion: reduce) {
-        button,
-        .btn,
+        .hamburger .line {
+          transition: none;
+        }
+
         nav a,
         .create-profile-link,
         .logout-btn {
           transition: none;
-        }
-
-        button:hover,
-        .btn:hover {
-          transform: none;
         }
       }
 
@@ -423,6 +500,10 @@
           box-shadow: none;
         }
 
+        .hamburger {
+          display: none !important;
+        }
+
         nav {
           display: none;
         }
@@ -437,8 +518,15 @@
   </head>
   <body>
     <header>
-      <h1>Expert Connect</h1>
-      <nav>
+      <div class="header-container">
+        <h1>Expert Connect</h1>
+        <button class="hamburger" onclick="toggleMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
+      </div>
+      <nav id="nav-menu">
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'experts_list' %}">Experts</a>
         <a href="{% url 'podcasts_list' %}">Podcasts</a>
@@ -459,5 +547,37 @@
       </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
+
+    <script>
+      function toggleMenu() {
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.getElementById("nav-menu");
+
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.getElementById("nav-menu");
+
+        if (!hamburger.contains(event.target) && !nav.contains(event.target)) {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+        }
+      });
+
+      // Close menu when window is resized to tablet/desktop
+      window.addEventListener("resize", function () {
+        if (window.innerWidth >= 768) {
+          const hamburger = document.querySelector(".hamburger");
+          const nav = document.getElementById("nav-menu");
+
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+        }
+      });
+    </script>
   </body>
 </html>
