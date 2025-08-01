@@ -526,25 +526,84 @@
     }
   }
 
-  /* Large Desktop Styles (1440px and up) */
+  /* Large Desktop Styles (1440px and up) - Show all 6 in one row */
   @media (min-width: 1440px) {
     .featured-grid {
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 1400px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
 
     .home-header {
-      max-width: 1200px;
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
 
     .featured-section {
-      max-width: 1400px;
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .featured-card {
+      padding: 1rem;
+      min-width: 0;
+    }
+
+    .card-image {
+      width: 60px;
+      height: 60px;
+    }
+
+    .card-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .card-content p {
+      font-size: 0.85rem;
+    }
+
+    .btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      min-width: 80px;
+    }
+  }
+
+  /* Extra Large Desktop Styles (1920px and up) */
+  @media (min-width: 1920px) {
+    .featured-grid {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem;
+      max-width: 1800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featured-card {
+      padding: 1.25rem;
+    }
+
+    .card-image {
+      width: 70px;
+      height: 70px;
+    }
+
+    .card-header h3 {
+      font-size: 1.2rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      min-width: 90px;
     }
   }
 
