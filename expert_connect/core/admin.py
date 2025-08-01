@@ -5,11 +5,16 @@ from .models import User, ExpertProfile, PodcastProfile, Like, Favorite, Comment
 
 @admin.register(ExpertProfile)
 class ExpertProfileAdmin(admin.ModelAdmin):
-    list_display = ('name', 'user', 'category', 'featured', 'created_at')
+    list_display = ('name', 'user', 'category', 'featured', 'has_image', 'created_at')
     list_filter = ('featured', 'category')
     search_fields = ('name', 'bio', 'user__username', 'user__email')
     list_editable = ('featured', 'category')
     actions = ['make_featured', 'remove_featured']
+    
+    def has_image(self, obj):
+        return bool(obj.image)
+    has_image.boolean = True
+    has_image.short_description = 'Has Image'
     
     def created_at(self, obj):
         return obj.user.date_joined
@@ -28,11 +33,16 @@ class ExpertProfileAdmin(admin.ModelAdmin):
 
 @admin.register(PodcastProfile)
 class PodcastProfileAdmin(admin.ModelAdmin):
-    list_display = ('name', 'user', 'category', 'featured', 'created_at')
+    list_display = ('name', 'user', 'category', 'featured', 'has_image', 'created_at')
     list_filter = ('featured', 'category')
     search_fields = ('name', 'description', 'user__username', 'user__email')
     list_editable = ('featured', 'category')
     actions = ['make_featured', 'remove_featured']
+    
+    def has_image(self, obj):
+        return bool(obj.image)
+    has_image.boolean = True
+    has_image.short_description = 'Has Image'
     
     def created_at(self, obj):
         return obj.user.date_joined

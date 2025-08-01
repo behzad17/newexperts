@@ -39,6 +39,7 @@ class ExpertProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=255)
     bio = models.TextField()
+    image = models.ImageField(upload_to='expert_images/', null=True, blank=True, help_text="Upload your profile picture")
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
 
@@ -73,6 +74,7 @@ class PodcastProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
+    image = models.ImageField(upload_to='podcast_images/', null=True, blank=True, help_text="Upload your podcast cover image")
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
 

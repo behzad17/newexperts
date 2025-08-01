@@ -1,10 +1,173 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<div class="create-profile-container">
+  <h2>Create Your Profile</h2>
 
-{% block content %}
-<h2>Create Your Profile</h2>
-<form method="post">
+  <form method="post" enctype="multipart/form-data" class="profile-form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Profile</button>
-</form>
+
+    <div class="form-group">
+      <label for="{{ form.name.id_for_label }}">Name:</label>
+      {{ form.name }} {% if form.name.errors %}
+      <div class="error-message">{{ form.name.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label for="{{ form.category.id_for_label }}">Category:</label>
+      {{ form.category }} {% if form.category.errors %}
+      <div class="error-message">{{ form.category.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label for="{{ form.image.id_for_label }}">Profile Image:</label>
+      <div class="image-upload-container">
+        {{ form.image }}
+        <div class="upload-hint">Upload a profile picture (JPG, PNG, GIF)</div>
+      </div>
+      {% if form.image.errors %}
+      <div class="error-message">{{ form.image.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    {% if form.bio %}
+    <div class="form-group">
+      <label for="{{ form.bio.id_for_label }}">Bio:</label>
+      {{ form.bio }} {% if form.bio.errors %}
+      <div class="error-message">{{ form.bio.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %} {% if form.description %}
+    <div class="form-group">
+      <label for="{{ form.description.id_for_label }}">Description:</label>
+      {{ form.description }} {% if form.description.errors %}
+      <div class="error-message">{{ form.description.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary">Save Profile</button>
+  </form>
+</div>
+
+<style>
+  .create-profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .create-profile-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .image-upload-container {
+    border: 2px dashed #e1e5e9;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    transition: border-color 0.2s ease;
+  }
+
+  .image-upload-container:hover {
+    border-color: #3498db;
+  }
+
+  .image-upload-container input[type="file"] {
+    border: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .upload-hint {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .create-profile-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+
+    .create-profile-container h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
 {% endblock %}
