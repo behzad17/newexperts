@@ -193,7 +193,7 @@
     margin-bottom: 2rem;
   }
 
-  /* Mobile Cards */
+  /* Mobile Cards - Fixed Layout */
   .featured-card {
     background: white;
     border-radius: 12px;
@@ -204,23 +204,24 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     overflow: hidden;
     min-height: 400px;
     max-height: 400px;
   }
 
+  /* Image takes 25% of card height */
   .card-image {
-    align-self: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 100%;
+    height: 25%;
+    min-height: 100px;
+    border-radius: 8px;
     overflow: hidden;
     background-color: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    margin-bottom: 1rem;
   }
 
   .profile-img {
@@ -233,18 +234,18 @@
     width: 100%;
     height: 100%;
     background-color: #e9ecef;
-    border-radius: 50%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #6c757d;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
   }
 
+  /* Content takes remaining 75% */
   .card-content {
     flex: 1;
-    text-align: center;
     display: flex;
     flex-direction: column;
     min-height: 0;
@@ -261,6 +262,7 @@
     border-radius: 8px;
     font-size: 0.7rem;
     font-weight: bold;
+    z-index: 1;
   }
 
   .featured-card:hover {
@@ -285,6 +287,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
+    text-align: center;
   }
 
   .card-stats {
@@ -329,14 +332,17 @@
     overflow-wrap: break-word;
     max-width: 100%;
     flex: 1;
+    text-align: center;
   }
 
+  /* Buttons arranged vertically */
   .card-actions {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
     flex-shrink: 0;
+    margin-top: auto;
   }
 
   /* Smaller, more attractive buttons */
@@ -438,33 +444,13 @@
 
     .featured-card {
       padding: 1.25rem;
-      flex-direction: row;
-      text-align: left;
       min-height: 400px;
       max-height: 400px;
     }
 
     .card-image {
-      align-self: flex-start;
-      width: 70px;
-      height: 70px;
-    }
-
-    .card-content {
-      text-align: left;
-    }
-
-    .card-header {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-actions {
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
+      height: 25%;
+      min-height: 120px;
     }
 
     .btn {
@@ -522,8 +508,8 @@
     }
 
     .card-image {
-      width: 80px;
-      height: 80px;
+      height: 25%;
+      min-height: 100px;
     }
 
     .card-header h3 {
@@ -583,8 +569,8 @@
     }
 
     .card-image {
-      width: 70px;
-      height: 70px;
+      height: 25%;
+      min-height: 100px;
     }
 
     .card-header h3 {
@@ -620,8 +606,8 @@
     }
 
     .card-image {
-      width: 80px;
-      height: 80px;
+      height: 25%;
+      min-height: 100px;
     }
 
     .card-header h3 {
