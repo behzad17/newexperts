@@ -193,7 +193,7 @@
     border: 1px solid #e1e5e9;
     display: flex;
     flex-direction: column;
-    max-height: 400px; /* Reduced height since no bio */
+    max-height: 350px; /* Reduced height for smaller image */
   }
 
   .expert-card:hover {
@@ -203,7 +203,7 @@
 
   .expert-image {
     width: 100%;
-    height: 160px; /* Reduced height */
+    height: 120px; /* Smaller full-size image */
     overflow: hidden;
     background: #f8f9fa;
     display: flex;
@@ -219,20 +219,20 @@
   }
 
   .profile-placeholder {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: #e9ecef;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #6c757d;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 
   .expert-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -249,7 +249,7 @@
 
   .expert-header h3 {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #2c3e50;
   }
@@ -290,13 +290,14 @@
 
   .expert-actions {
     display: flex;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-top: auto;
     flex-shrink: 0;
   }
 
   .expert-actions .btn {
-    flex: 1;
+    width: 100%;
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
     text-align: center;
@@ -306,7 +307,6 @@
     transition: all 0.2s ease;
     border: none;
     cursor: pointer;
-    min-width: 0;
   }
 
   .expert-actions .btn-primary {
@@ -356,19 +356,19 @@
     }
 
     .expert-card {
-      max-height: 380px;
+      max-height: 330px;
     }
 
     .expert-image {
-      height: 140px;
+      height: 100px;
     }
 
     .expert-content {
-      padding: 1.25rem;
+      padding: 1rem;
     }
 
     .expert-header h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .expert-actions .btn {
@@ -385,19 +385,19 @@
     }
 
     .expert-card {
-      max-height: 360px;
+      max-height: 320px;
     }
 
     .expert-image {
-      height: 130px;
+      height: 90px;
     }
 
     .expert-content {
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
 
     .expert-header h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     .expert-actions .btn {
@@ -414,19 +414,19 @@
     }
 
     .expert-card {
-      max-height: 350px;
+      max-height: 310px;
     }
 
     .expert-image {
-      height: 120px;
+      height: 80px;
     }
 
     .expert-content {
-      padding: 1.75rem;
+      padding: 1.5rem;
     }
 
     .expert-header h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
     .expert-actions .btn {
