@@ -1,0 +1,1649 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-08-01T19:33:19.873Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "20",
+    "object_repr": "Dr. Robert Kim",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-08-01T19:40:38.739Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "19",
+    "object_repr": "Lisa Wang",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-08-01T19:40:47.974Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "18",
+    "object_repr": "David Thompson",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-08-01T19:41:00.356Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "17",
+    "object_repr": "Michael Chen",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-08-01T19:41:10.230Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "Lisa Park",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-08-01T19:41:19.506Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Dr. James Wilson",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-08-01T19:41:31.425Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Alex Thompson",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-08-01T19:41:41.553Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Dr. Emily Rodriguez",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-08-01T19:41:51.753Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Mike Chen",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-08-01T19:42:00.958Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Dr. Sarah Johnson",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-08-01T19:42:11.705Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Another Expert",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-08-01T19:42:26.236Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Test Expert",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-08-01T19:43:48.733Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "25",
+    "object_repr": "Green Living",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-08-01T19:44:01.416Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "24",
+    "object_repr": "Creative Minds",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-08-01T19:44:11.836Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "23",
+    "object_repr": "Money Matters",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-08-01T19:44:21.999Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "22",
+    "object_repr": "Health & Wellness Today",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-08-01T19:44:31.600Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "21",
+    "object_repr": "Business Growth Podcast",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-08-01T19:44:40.464Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "Future of Work",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-08-01T19:44:49.716Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "Startup Stories",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-08-01T19:44:59.701Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "13",
+    "object_repr": "Science Explained",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-08-01T19:45:09.398Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "Business Masters",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-08-01T19:45:26.503Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "Health & Wellness Today",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-08-01T19:45:36.350Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Tech Talk Daily",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 6,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 6,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 6,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 6,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add expert profile",
+    "content_type": 7,
+    "codename": "add_expertprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change expert profile",
+    "content_type": 7,
+    "codename": "change_expertprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete expert profile",
+    "content_type": 7,
+    "codename": "delete_expertprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view expert profile",
+    "content_type": 7,
+    "codename": "view_expertprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add podcast profile",
+    "content_type": 8,
+    "codename": "add_podcastprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change podcast profile",
+    "content_type": 8,
+    "codename": "change_podcastprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete podcast profile",
+    "content_type": 8,
+    "codename": "delete_podcastprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view podcast profile",
+    "content_type": 8,
+    "codename": "view_podcastprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add comment",
+    "content_type": 9,
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change comment",
+    "content_type": 9,
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete comment",
+    "content_type": 9,
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view comment",
+    "content_type": 9,
+    "codename": "view_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add favorite",
+    "content_type": 10,
+    "codename": "add_favorite"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change favorite",
+    "content_type": 10,
+    "codename": "change_favorite"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete favorite",
+    "content_type": 10,
+    "codename": "delete_favorite"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view favorite",
+    "content_type": 10,
+    "codename": "view_favorite"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add like",
+    "content_type": 11,
+    "codename": "add_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change like",
+    "content_type": 11,
+    "codename": "change_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete like",
+    "content_type": 11,
+    "codename": "delete_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view like",
+    "content_type": 11,
+    "codename": "view_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add message",
+    "content_type": 12,
+    "codename": "add_message"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change message",
+    "content_type": 12,
+    "codename": "change_message"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete message",
+    "content_type": 12,
+    "codename": "delete_message"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view message",
+    "content_type": 12,
+    "codename": "view_message"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "core",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "core",
+    "model": "expertprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "core",
+    "model": "podcastprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "core",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "core",
+    "model": "favorite"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "core",
+    "model": "like"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "core",
+    "model": "message"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "opitcxj7y0kvjarcwha1050q062nubsu",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll2_FtT0nMGa73e4ABypDipEHeHSCmgfTPzXiLhtta0dV7SVMRZaHH63TLSg9sOyh3bbZY0t3WZstwVedAur3Ph5-Vw_w4q9vqtA9hIimE0HsjkiGwBMEQ70KCJDBpfgo6eOSuTYQTKzqgSHQTHIWjx_gDcXDeU:1uhvUP:9T4N7JC6bumPIMNvdbZSmwGCC4XKF6h6DzoTx41Y4b8",
+    "expire_date": "2025-08-15T19:32:25.655Z"
+  }
+},
+{
+  "model": "core.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$3fKuJJphEY5r2wk84gugVB$n5k1zuxVxga7Jt7OhqG9Y0+i0PbM6HQ5ozVP8U3JGEs=",
+    "last_login": "2025-08-01T19:32:25.654Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-08-01T13:23:52.204Z",
+    "user_type": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$niclTpBgrPolFxOJ283f7Y$BoLr4s02XfyHSHXolMnKjQUTE4Ax5MjrmwsPlXeD1jA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:16:01.988Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$dylwah1hlPdJgDGtFD28fg$G6AbK5+7zYAkIWKaNnyc1DNMUolmPgw1l3mhMs/FXFg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "expert2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:20:08.144Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$PgI4FwRuKDatI1mAeBrKTH$nv9QGGPxVohlKipbg1Px3XjY0gx/Bq6nfOaVMDkPsJc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "dr_sarah_johnson",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:54.702Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$BE9Mto2QUQpvJq2Sr7lqU8$a4W2zmMHbQlDSurpPfxaRS+WyU61X6vu70naDN8xnj4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mike_chen",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:54.880Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$opqEpB2wxFNmdwigGDCcCt$r6NV85a628QNfuRu2Hehi7VaW+jSD7VeNIQljLMSdXk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "dr_emily_rodriguez",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:55.056Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$fBw7HGAVoOUEQzlQhGvV98$Fm5bJ8gaFSr0yqCJHnOtola0WYUsWASQIaZTIeras+E=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alex_thompson",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:55.232Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$NCOM3NxvH8JAEQTg2cO9Gu$Je07kaqYXFQKnWmjkqStF6V9dSrOShb5dh2r+Fbb0jA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "dr_james_wilson",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:55.411Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$CCCLMIaoi55C0247jGYdcD$JP1chsRrQYnWkOaNJirWWR2aQpWZCz0DGJ837x08Gls=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "lisa_park",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:55.587Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$ni97RQtX1TuG8Fs6o8OEqO$bfYjCV+7G7NA3Q6rUSCtRJYZRz7yPk1rSHBcGSc9Z1c=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "tech_talk_daily",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:55.763Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$gAUttsSMfpmH9hAGle9PFn$1nuQLtty3lpo/kPUosyne4EcEzHDjmJZwU3EJFD3nJQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "health_wellness_podcast",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:55.940Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$v85A0KvMSMguH0gk2rdnAi$qneZuToAMdIoTM9mTCN51cNawhtxcYvQCh2NSgLFBXk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "business_masters",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:56.116Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$yaBJDFngj3Uo9N7YiFVJrH$KO/DySJSqW8s7yoOsMPgZ2ikfxV1NvMYzGEYrN1HQpg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "science_explained",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:56.293Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$XcsytaXnMhBe6LQzXk2PC3$zrmYYWwZC3y/GYEH+PXDNal+Qnonne/xDMZrQRds1e0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "startup_stories",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:56.470Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 15,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$3iDo7meDHK8s1BQ8iW35In$nXBtcmDkBpmYaqThIrwfSby+b5A/GkBt/x137HBdDDw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "future_of_work",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T16:22:56.647Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$IWikogkacB7rJMdmFb3RZp$DlKbnw+UneHjHonuk60OLgTZz+PM4C8wqIyeg7/eb6c=",
+    "last_login": "2025-08-01T18:16:14.725Z",
+    "is_superuser": false,
+    "username": "Behzad",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T17:17:43.322Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$N21Uf0avgKkcifeChTF5ah$wM2s7q2aI5FgvBngEkDpF+53LQ4SruRIDWiNp8wIigI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "michael_chen",
+    "first_name": "",
+    "last_name": "",
+    "email": "michael.chen@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:39.830Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$gSb97MChSGbKnROwze84JI$Ydogc2FsfHiM+omvNyWzet8w6wqp8bEqvROU0PcEVck=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "david_thompson",
+    "first_name": "",
+    "last_name": "",
+    "email": "david.thompson@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:40.023Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 19,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$dkMH3L4ZdyTRZ1e2gEHxYp$ssgZT7dO3OhKi1HLIiN76Ap943nzxMfELgo2m59XCg4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "lisa_wang",
+    "first_name": "",
+    "last_name": "",
+    "email": "lisa.wang@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:40.199Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$wkmTEN7TkqBnSH8IsuNUXP$ZHBlauAtpIwGil+WewfbSOOX5WTCrkT/7z3z9JOyoWI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "dr_robert_kim",
+    "first_name": "",
+    "last_name": "",
+    "email": "robert.kim@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:40.376Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$8ehPa1UPFz7LThGoqZgA8g$Wi6CgaFVupVu53ps8pXc3VANHOYle29EsqK1MBXjIsU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "business_growth_podcast",
+    "first_name": "",
+    "last_name": "",
+    "email": "business@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:40.558Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$9vbbW5IjM27Mn3dStteZfu$N2NBT/HNwcCfBrehh3GzedZCxKl1w2bgwtTkMAvHBbY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "health_wellness_today",
+    "first_name": "",
+    "last_name": "",
+    "email": "health@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:40.735Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$WVcwHWB5f2TRkJmWGqVIRt$tpWrX2pWDFK3cf4n4xyhqn5OUoRlhBlUJQKiS89m9aQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "money_matters",
+    "first_name": "",
+    "last_name": "",
+    "email": "money@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:40.912Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 24,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$6uK09JkzTU33PsqNEbrw4d$QqgMWvmyrxk6lyWNxUcU8EUXQkDSusfUmciSpztHJPs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "creative_minds",
+    "first_name": "",
+    "last_name": "",
+    "email": "creative@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:41.090Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 25,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$bsClydMmdyO3NxoYKjHM7b$vZjEhwxmjmQmyp1QiYIDX7FHdEt+eTo09ekzr+fTkTM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "green_living",
+    "first_name": "",
+    "last_name": "",
+    "email": "green@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:00:41.267Z",
+    "user_type": "podcaster",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 26,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$aPkJ0vo8XpcA1DUp4hZcOE$fD74lHMZUB8Rpu//IeUsVrgJm0Uo6JgjcyB9UcSwvmI=",
+    "last_login": "2025-08-01T18:25:47.277Z",
+    "is_superuser": false,
+    "username": "Behzadian",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:24:56.855Z",
+    "user_type": "expert",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 2,
+  "fields": {
+    "name": "Test Expert",
+    "bio": "This is a test expert profile for demonstration.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_FrzJexk.28.34.png",
+    "category": "technology",
+    "featured": true
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 3,
+  "fields": {
+    "name": "Another Expert",
+    "bio": "This is another expert profile for testing messaging.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_5GPCZsw.28.34.png",
+    "category": "business",
+    "featured": true
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 4,
+  "fields": {
+    "name": "Dr. Sarah Johnson",
+    "bio": "Leading technology consultant with 15+ years experience in AI and machine learning. Former Google engineer and Stanford PhD.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_I3KBcTK.28.34.png",
+    "category": "technology",
+    "featured": true
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 5,
+  "fields": {
+    "name": "Mike Chen",
+    "bio": "Cybersecurity expert and ethical hacker with expertise in network security, penetration testing, and incident response. Certified CISSP, CEH, and OSCP. Helped secure Fortune 500 companies and government agencies.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_H9ckub1.28.34.png",
+    "category": "technology",
+    "featured": true
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 6,
+  "fields": {
+    "name": "Dr. Emily Rodriguez",
+    "bio": "Renowned health and wellness expert specializing in nutrition and preventive medicine. Author of 5 bestselling health books.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_qsQccUj.28.34.png",
+    "category": "health",
+    "featured": false
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 7,
+  "fields": {
+    "name": "Alex Thompson",
+    "bio": "Blockchain and cryptocurrency expert with deep knowledge of DeFi, smart contracts, and Web3 technologies. Former senior developer at Ethereum Foundation. Consultant for major financial institutions on blockchain adoption.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_SljuSFi.28.34.png",
+    "category": "technology",
+    "featured": true
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 8,
+  "fields": {
+    "name": "Dr. James Wilson",
+    "bio": "Healthcare technology innovator and medical AI specialist. MD from Harvard Medical School with additional PhD in Computer Science. Pioneering work in telemedicine, medical imaging AI, and digital health solutions.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_38Gcdxc.28.34.png",
+    "category": "health",
+    "featured": false
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 9,
+  "fields": {
+    "name": "Lisa Park",
+    "bio": "Digital marketing strategist and growth hacker with expertise in SEO, social media marketing, and conversion optimization. Helped scale 50+ startups from zero to millions in revenue. Expert in data-driven marketing strategies.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_HgSgHZI.28.34.png",
+    "category": "marketing",
+    "featured": false
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 17,
+  "fields": {
+    "name": "Michael Chen",
+    "bio": "Business strategist helping startups scale from $0 to $100M. Expert in growth hacking and digital marketing.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_XhsIQsq.28.34.png",
+    "category": "business",
+    "featured": true
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 18,
+  "fields": {
+    "name": "David Thompson",
+    "bio": "Financial advisor and investment expert with 20+ years on Wall Street. Helping individuals build wealth through smart investing.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_zmAGl5r.28.34.png",
+    "category": "finance",
+    "featured": false
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 19,
+  "fields": {
+    "name": "Lisa Wang",
+    "bio": "Creative director and design expert. Former design lead at Apple and Adobe. Specializing in UX/UI design and brand identity.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02_uYNrwIE.28.34.png",
+    "category": "design",
+    "featured": false
+  }
+},
+{
+  "model": "core.expertprofile",
+  "pk": 20,
+  "fields": {
+    "name": "Dr. Robert Kim",
+    "bio": "Environmental scientist and sustainability expert. Leading research on climate change solutions and green technology.",
+    "image": "expert_images/Screenshot_2025-07-25_at_02.28.34.png",
+    "category": "environment",
+    "featured": false
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 10,
+  "fields": {
+    "name": "Tech Talk Daily",
+    "description": "Daily insights into the latest technology trends, startup stories, and innovation breakthroughs.",
+    "image": "podcast_images/Black_Siorc_Logo_HLK29GJ.png",
+    "category": "technology",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 11,
+  "fields": {
+    "name": "Health & Wellness Today",
+    "description": "Expert interviews and evidence-based discussions on mental health, physical wellness, nutrition, and holistic living. Featuring doctors, psychologists, and wellness professionals.",
+    "image": "podcast_images/Black_Siorc_Logo_JMXI0zt.png",
+    "category": "health",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 12,
+  "fields": {
+    "name": "Business Masters",
+    "description": "In-depth conversations with successful entrepreneurs, CEOs, and business leaders. Learn from their failures, successes, and strategies for building sustainable businesses.",
+    "image": "podcast_images/Black_Siorc_Logo_vEZc1XQ.png",
+    "category": "business",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 13,
+  "fields": {
+    "name": "Science Explained",
+    "description": "Making complex scientific concepts accessible to everyone. From quantum physics to climate science, we break down the latest research and discoveries in an engaging way.",
+    "image": "podcast_images/Black_Siorc_Logo_XMVEpYQ.png",
+    "category": "science",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 14,
+  "fields": {
+    "name": "Startup Stories",
+    "description": "Real stories from startup founders about their journey from idea to success. Covers fundraising, product development, team building, and scaling challenges.",
+    "image": "podcast_images/Black_Siorc_Logo_9InMmGN.png",
+    "category": "business",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 15,
+  "fields": {
+    "name": "Future of Work",
+    "description": "Exploring how technology is transforming the workplace. Topics include remote work, automation, AI in business, and preparing for the jobs of tomorrow.",
+    "image": "podcast_images/Black_Siorc_Logo_dqAxOz8.png",
+    "category": "career",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 21,
+  "fields": {
+    "name": "Business Growth Podcast",
+    "description": "Weekly interviews with successful entrepreneurs and business leaders sharing growth strategies.",
+    "image": "podcast_images/Black_Siorc_Logo_I7zMGMy.png",
+    "category": "business",
+    "featured": true
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 22,
+  "fields": {
+    "name": "Health & Wellness Today",
+    "description": "Expert advice on nutrition, fitness, mental health, and living a balanced lifestyle.",
+    "image": "podcast_images/Black_Siorc_Logo_ejbx5ZT.png",
+    "category": "health",
+    "featured": false
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 23,
+  "fields": {
+    "name": "Money Matters",
+    "description": "Personal finance tips, investment strategies, and financial planning advice for all life stages.",
+    "image": "podcast_images/Black_Siorc_Logo_P1qgEOt.png",
+    "category": "finance",
+    "featured": false
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 24,
+  "fields": {
+    "name": "Creative Minds",
+    "description": "Interviews with artists, designers, and creative professionals about their inspiration and process.",
+    "image": "podcast_images/Black_Siorc_Logo_fU9ncQ3.png",
+    "category": "design",
+    "featured": false
+  }
+},
+{
+  "model": "core.podcastprofile",
+  "pk": 25,
+  "fields": {
+    "name": "Green Living",
+    "description": "Sustainable living tips, environmental news, and discussions about climate change solutions.",
+    "image": "podcast_images/Black_Siorc_Logo.png",
+    "category": "environment",
+    "featured": false
+  }
+},
+{
+  "model": "core.like",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "content_type": 7,
+    "object_id": 2,
+    "created_at": "2025-08-01T16:41:23.725Z"
+  }
+},
+{
+  "model": "core.like",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "content_type": 7,
+    "object_id": 3,
+    "created_at": "2025-08-01T18:22:29.885Z"
+  }
+},
+{
+  "model": "core.favorite",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "content_type": 8,
+    "object_id": 10,
+    "created_at": "2025-08-01T18:23:28.064Z"
+  }
+},
+{
+  "model": "core.comment",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "content_type": 7,
+    "object_id": 2,
+    "text": "jg,c",
+    "created_at": "2025-08-01T22:21:21.003Z"
+  }
+},
+{
+  "model": "core.message",
+  "pk": 1,
+  "fields": {
+    "sender": 1,
+    "receiver": 10,
+    "subject": "ufgv",
+    "body": "hgkcf",
+    "sent_at": "2025-08-01T16:28:10.030Z",
+    "read_at": null
+  }
+},
+{
+  "model": "core.message",
+  "pk": 2,
+  "fields": {
+    "sender": 1,
+    "receiver": 10,
+    "subject": "jhgvc",
+    "body": "hjvfjhfv",
+    "sent_at": "2025-08-01T22:21:01.121Z",
+    "read_at": null
+  }
+}
+]
