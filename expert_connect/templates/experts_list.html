@@ -51,7 +51,6 @@
                     <h3><a href="{% url 'profile_detail' expert.user.id %}">{{ expert.name }}</a></h3>
                     <span class="category-badge">{{ expert.get_category_display }}</span>
                 </div>
-                <p class="expert-bio">{{ expert.bio|truncatewords:25 }}</p>
                 <div class="expert-stats">
                     <span class="likes-count">❤️ {{ expert.likes_count }} likes</span>
                 </div>
@@ -194,7 +193,7 @@
     border: 1px solid #e1e5e9;
     display: flex;
     flex-direction: column;
-    max-height: 500px; /* Fixed maximum height */
+    max-height: 400px; /* Reduced height since no bio */
   }
 
   .expert-card:hover {
@@ -204,13 +203,13 @@
 
   .expert-image {
     width: 100%;
-    height: 180px; /* Fixed height for image */
+    height: 160px; /* Reduced height */
     overflow: hidden;
     background: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* Prevent image from shrinking */
+    flex-shrink: 0;
   }
 
   .profile-img {
@@ -237,7 +236,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 0; /* Allow content to shrink */
+    min-height: 0;
   }
 
   .expert-header {
@@ -245,7 +244,7 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    flex-shrink: 0; /* Keep header at top */
+    flex-shrink: 0;
   }
 
   .expert-header h3 {
@@ -274,21 +273,9 @@
     align-self: flex-start;
   }
 
-  .expert-bio {
-    color: #6c757d;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    flex: 1; /* Allow bio to grow and shrink */
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
-    -webkit-box-orient: vertical;
-  }
-
   .expert-stats {
     margin-bottom: 1rem;
-    flex-shrink: 0; /* Keep stats at bottom */
+    flex-shrink: 0;
   }
 
   .likes-count {
@@ -298,26 +285,50 @@
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
+    display: inline-block;
   }
 
   .expert-actions {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex-shrink: 0; /* Keep actions at bottom */
+    gap: 0.75rem;
+    margin-top: auto;
+    flex-shrink: 0;
   }
 
   .expert-actions .btn {
-    width: 100%;
+    flex: 1;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
     text-align: center;
-    padding: 0.4rem 0.6rem; /* Much smaller padding */
-    font-size: 0.75rem; /* Much smaller font size */
-    min-width: auto; /* Remove min-width constraint */
-    border-radius: 4px; /* Smaller border radius */
+    text-decoration: none;
+    border-radius: 6px;
     font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    min-width: 0;
   }
 
-  /* No Results */
+  .expert-actions .btn-primary {
+    background-color: #3498db;
+    color: white;
+  }
+
+  .expert-actions .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+  }
+
+  .expert-actions .btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+  }
+
+  .expert-actions .btn-secondary:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-1px);
+  }
+
   .no-results {
     text-align: center;
     padding: 3rem 1rem;
@@ -327,112 +338,70 @@
   }
 
   .no-results h3 {
-    color: #6c757d;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
   .no-results p {
     color: #6c757d;
-    margin: 0;
+    font-size: 1rem;
   }
 
   /* Tablet Styles (768px and up) */
   @media (min-width: 768px) {
-    .experts-container {
-      max-width: 800px;
-    }
-
-    .page-header h1 {
-      font-size: 2.5rem;
-    }
-
-    .page-header p {
-      font-size: 1.2rem;
-    }
-
-    .search-filter-form {
-      flex-direction: row;
-      align-items: end;
-      gap: 1rem;
-    }
-
-    .search-group,
-    .filter-group {
-      flex: 1;
-    }
-
-    .search-btn {
-      flex-shrink: 0;
-    }
-
     .experts-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
 
     .expert-card {
-      max-height: 480px; /* Slightly smaller for tablet */
+      max-height: 380px;
     }
 
     .expert-image {
-      height: 160px; /* Smaller image for tablet */
+      height: 140px;
     }
 
-    .expert-actions {
-      flex-direction: row;
-      gap: 0.5rem;
+    .expert-content {
+      padding: 1.25rem;
+    }
+
+    .expert-header h3 {
+      font-size: 1.2rem;
     }
 
     .expert-actions .btn {
-      width: auto;
-      flex: 1;
-      padding: 0.5rem 0.8rem; /* Slightly larger for tablet */
+      padding: 0.5rem 0.8rem;
       font-size: 0.8rem;
     }
   }
 
   /* Desktop Styles (1024px and up) */
   @media (min-width: 1024px) {
-    .experts-container {
-      max-width: 1200px;
-    }
-
-    .page-header h1 {
-      font-size: 3rem;
-    }
-
-    .page-header p {
-      font-size: 1.3rem;
-    }
-
     .experts-grid {
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
     }
 
     .expert-card {
-      max-height: 460px; /* Even smaller for desktop */
+      max-height: 360px;
     }
 
     .expert-image {
-      height: 150px; /* Smaller image for desktop */
+      height: 130px;
     }
 
     .expert-content {
-      padding: 2rem;
+      padding: 1.5rem;
     }
 
     .expert-header h3 {
-      font-size: 1.4rem;
-    }
-
-    .expert-bio {
-      font-size: 1rem;
+      font-size: 1.3rem;
     }
 
     .expert-actions .btn {
-      padding: 0.6rem 1rem; /* Larger for desktop */
+      padding: 0.6rem 1rem;
       font-size: 0.85rem;
     }
   }
@@ -445,33 +414,32 @@
     }
 
     .expert-card {
-      max-height: 440px; /* Smallest for large desktop */
+      max-height: 350px;
     }
 
     .expert-image {
-      height: 140px; /* Smallest image for large desktop */
+      height: 120px;
+    }
+
+    .expert-content {
+      padding: 1.75rem;
+    }
+
+    .expert-header h3 {
+      font-size: 1.4rem;
     }
 
     .expert-actions .btn {
-      padding: 0.7rem 1.2rem; /* Largest for large desktop */
+      padding: 0.7rem 1.2rem;
       font-size: 0.9rem;
     }
   }
 
   /* Touch-friendly improvements */
   @media (hover: none) and (pointer: coarse) {
-    .search-btn {
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-    }
-
     .expert-actions .btn {
-      padding: 0.6rem 0.8rem; /* Larger for touch devices */
-      font-size: 0.8rem;
-    }
-
-    .expert-card {
-      padding: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -481,7 +449,6 @@
       border: 2px solid #000;
     }
 
-    .search-btn,
     .expert-actions .btn {
       border: 2px solid currentColor;
     }
@@ -490,11 +457,15 @@
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     .expert-card,
-    .search-btn {
+    .expert-actions .btn {
       transition: none;
     }
 
     .expert-card:hover {
+      transform: none;
+    }
+
+    .expert-actions .btn:hover {
       transform: none;
     }
   }
