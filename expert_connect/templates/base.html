@@ -90,7 +90,6 @@
         <a href="{% url 'experts_list' %}">Experts</a>
         <a href="{% url 'podcasts_list' %}">Podcasts</a>
         {% if user.is_authenticated %}
-        <a href="{% url 'profile_status' %}">My Profile Status</a>
         <a href="{% url 'inbox' %}">Inbox</a>
         <form method="post" action="{% url 'logout' %}" class="logout-form">
           {% csrf_token %}

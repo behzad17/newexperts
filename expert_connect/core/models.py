@@ -42,7 +42,6 @@ class ExpertProfile(models.Model):
     image = models.ImageField(upload_to='expert_images/', null=True, blank=True, help_text="Upload your profile picture")
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
-    is_approved = models.BooleanField(default=False, help_text="Admin approval status")
 
     def __str__(self):
         return self.name
@@ -78,7 +77,6 @@ class PodcastProfile(models.Model):
     image = models.ImageField(upload_to='podcast_images/', null=True, blank=True, help_text="Upload your podcast cover image")
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
-    is_approved = models.BooleanField(default=False, help_text="Admin approval status")
 
     def __str__(self):
         return self.name

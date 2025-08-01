@@ -2,14 +2,6 @@
 <div class="create-profile-container">
   <h2>Create Your Profile</h2>
 
-  <div class="approval-notice">
-    <p>
-      <strong>Important:</strong> Your profile will be reviewed by an
-      administrator before it becomes visible to other users. You will be
-      notified once it's approved.
-    </p>
-  </div>
-
   <form method="post" enctype="multipart/form-data" class="profile-form">
     {% csrf_token %}
 
@@ -54,7 +46,7 @@
     </div>
     {% endif %}
 
-    <button type="submit" class="btn btn-primary">Submit for Approval</button>
+    <button type="submit" class="btn btn-primary">Save Profile</button>
   </form>
 </div>
 
@@ -71,22 +63,8 @@
   .create-profile-container h2 {
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-
-  .approval-notice {
-    background: #fff3cd;
-    border: 1px solid #ffeaa7;
-    border-radius: 5px;
-    padding: 1rem;
     margin-bottom: 2rem;
-    color: #856404;
-  }
-
-  .approval-notice p {
-    margin: 0;
-    font-size: 0.95rem;
+    font-size: 2rem;
   }
 
   .profile-form {
