@@ -39,6 +39,19 @@
       .logout-btn:hover {
         text-decoration: underline;
       }
+      .create-profile-link {
+        background-color: #28a745;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 3px;
+        text-decoration: none;
+        margin-right: 1rem;
+        font-weight: bold;
+      }
+      .create-profile-link:hover {
+        background-color: #1e7e34;
+        text-decoration: none;
+      }
       main {
         max-width: 800px;
         margin: 0 auto;
@@ -89,7 +102,11 @@
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'experts_list' %}">Experts</a>
         <a href="{% url 'podcasts_list' %}">Podcasts</a>
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated %} {% if not has_profile %}
+        <a href="{% url 'create_profile' %}" class="create-profile-link"
+          >Create Profile</a
+        >
+        {% endif %}
         <a href="{% url 'inbox' %}">Inbox</a>
         <form method="post" action="{% url 'logout' %}" class="logout-form">
           {% csrf_token %}
