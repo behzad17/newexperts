@@ -13,22 +13,68 @@ class User(AbstractUser):
 
 
 class ExpertProfile(models.Model):
+    CATEGORY_CHOICES = [
+        ('technology', 'Technology'),
+        ('business', 'Business'),
+        ('health', 'Health & Wellness'),
+        ('education', 'Education'),
+        ('finance', 'Finance'),
+        ('marketing', 'Marketing'),
+        ('design', 'Design & Creative'),
+        ('science', 'Science'),
+        ('environment', 'Environment'),
+        ('psychology', 'Psychology'),
+        ('legal', 'Legal'),
+        ('real_estate', 'Real Estate'),
+        ('fitness', 'Fitness & Sports'),
+        ('cooking', 'Cooking & Food'),
+        ('travel', 'Travel'),
+        ('fashion', 'Fashion & Beauty'),
+        ('music', 'Music & Arts'),
+        ('parenting', 'Parenting'),
+        ('career', 'Career Development'),
+        ('spirituality', 'Spirituality'),
+    ]
+    
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=255)
     bio = models.TextField()
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
-    # Add other expert-specific fields here
 
     def __str__(self):
         return self.name
 
 
 class PodcastProfile(models.Model):
+    CATEGORY_CHOICES = [
+        ('technology', 'Technology'),
+        ('business', 'Business'),
+        ('health', 'Health & Wellness'),
+        ('education', 'Education'),
+        ('finance', 'Finance'),
+        ('marketing', 'Marketing'),
+        ('design', 'Design & Creative'),
+        ('science', 'Science'),
+        ('environment', 'Environment'),
+        ('psychology', 'Psychology'),
+        ('legal', 'Legal'),
+        ('real_estate', 'Real Estate'),
+        ('fitness', 'Fitness & Sports'),
+        ('cooking', 'Cooking & Food'),
+        ('travel', 'Travel'),
+        ('fashion', 'Fashion & Beauty'),
+        ('music', 'Music & Arts'),
+        ('parenting', 'Parenting'),
+        ('career', 'Career Development'),
+        ('spirituality', 'Spirituality'),
+    ]
+    
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
-    # Add other podcast-specific fields here
 
     def __str__(self):
         return self.name

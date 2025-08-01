@@ -10,12 +10,13 @@ class CustomUserCreationForm(UserCreationForm):
 class ExpertProfileForm(forms.ModelForm):
     class Meta:
         model = ExpertProfile
-        fields = ["name", "bio"]
+        fields = ["name", "bio", "category"]
+
 
 class PodcastProfileForm(forms.ModelForm):
     class Meta:
         model = PodcastProfile
-        fields = ["name", "description"]
+        fields = ["name", "description", "category"]
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -25,4 +26,4 @@ class CommentForm(forms.ModelForm):
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
-        fields = ["receiver", "subject", "body"]
+        fields = ["subject", "body"]
