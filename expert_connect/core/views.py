@@ -41,6 +41,10 @@ def register(request):
 
 @login_required
 def create_profile(request):
+    # Check if user already has a profile
+    if hasattr(request.user, 'expertprofile') or hasattr(request.user, 'podcastprofile'):
+        return redirect("home")
+    
     if request.user.user_type == "expert":
         form_class = ExpertProfileForm
         profile_class = ExpertProfile
@@ -49,7 +53,7 @@ def create_profile(request):
         profile_class = PodcastProfile
 
     if request.method == "POST":
-        form = form_class(request.POST)
+        form = form_class(request.POST, request.FILES)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user

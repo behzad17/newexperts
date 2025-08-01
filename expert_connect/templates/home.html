@@ -113,15 +113,15 @@
 {% else %}
 <div class="no-featured">
   <h2>No Featured Profiles Yet</h2>
-  <p>Check out our experts and podcasts to discover amazing content!</p>
-  <div class="cta-buttons">
-    <a href="{% url 'experts_list' %}" class="btn btn-primary"
-      >Browse Experts</a
-    >
-    <a href="{% url 'podcasts_list' %}" class="btn btn-secondary"
-      >Browse Podcasts</a
-    >
-  </div>
+  <p>Be the first to create a profile and get featured!</p>
+  {% if user.is_authenticated %} {% if not user.expertprofile and not
+  user.podcastprofile %}
+  <a href="{% url 'create_profile' %}" class="btn btn-primary"
+    >Create Your Profile</a
+  >
+  {% endif %} {% else %}
+  <a href="{% url 'register' %}" class="btn btn-primary">Register Now</a>
+  {% endif %}
 </div>
 {% endif %}
 
