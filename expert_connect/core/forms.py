@@ -12,9 +12,15 @@ class CustomUserCreationForm(UserCreationForm):
 class ExpertProfileForm(forms.ModelForm):
     class Meta:
         model = ExpertProfile
-        fields = ["name", "bio", "category", "image"]
+        fields = ["name", "bio", "category", "image", "email", "website_url", 
+                 "linkedin_url", "twitter_url", "instagram_url"]
         widgets = {
             'image': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'your.email@example.com'}),
+            'website_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'https://yourwebsite.com'}),
+            'linkedin_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'https://linkedin.com/in/yourprofile'}),
+            'twitter_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'https://twitter.com/yourhandle'}),
+            'instagram_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'https://instagram.com/yourhandle'}),
         }
 
 

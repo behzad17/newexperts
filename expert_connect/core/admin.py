@@ -5,16 +5,44 @@ from .models import User, ExpertProfile, PodcastProfile, Like, Favorite, Comment
 
 @admin.register(ExpertProfile)
 class ExpertProfileAdmin(admin.ModelAdmin):
-    list_display = ('name', 'user', 'category', 'featured', 'has_image', 'created_at')
+    list_display = ('name', 'user', 'category', 'featured', 'has_image', 'has_email', 'has_website', 'created_at')
     list_filter = ('featured', 'category')
-    search_fields = ('name', 'bio', 'user__username', 'user__email')
+    search_fields = ('name', 'bio', 'user__username', 'user__email', 'email', 'website_url')
     list_editable = ('featured', 'category')
     actions = ['make_featured', 'remove_featured']
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('user', 'name', 'bio', 'category', 'image')
+        }),
+        ('Contact Information', {
+            'fields': ('email', 'website_url'),
+            'classes': ('collapse',)
+        }),
+        ('Social Media', {
+            'fields': ('linkedin_url', 'twitter_url', 'instagram_url'),
+            'classes': ('collapse',)
+        }),
+        ('Settings', {
+            'fields': ('featured',),
+            'classes': ('collapse',)
+        }),
+    )
     
     def has_image(self, obj):
         return bool(obj.image)
     has_image.boolean = True
     has_image.short_description = 'Has Image'
+    
+    def has_email(self, obj):
+        return bool(obj.email)
+    has_email.boolean = True
+    has_email.short_description = 'Has Email'
+    
+    def has_website(self, obj):
+        return bool(obj.website_url)
+    has_website.boolean = True
+    has_website.short_description = 'Has Website'
     
     def created_at(self, obj):
         return obj.user.date_joined

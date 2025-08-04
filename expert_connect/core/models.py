@@ -42,6 +42,13 @@ class ExpertProfile(models.Model):
     image = models.ImageField(upload_to='expert_images/', null=True, blank=True, help_text="Upload your profile picture")
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='technology')
     featured = models.BooleanField(default=False)
+    
+    # Additional fields
+    email = models.EmailField(blank=True, null=True, help_text="Your professional email address")
+    website_url = models.URLField(blank=True, null=True, help_text="Your personal or business website")
+    linkedin_url = models.URLField(blank=True, null=True, help_text="Your LinkedIn profile URL")
+    twitter_url = models.URLField(blank=True, null=True, help_text="Your Twitter/X profile URL")
+    instagram_url = models.URLField(blank=True, null=True, help_text="Your Instagram profile URL")
 
     def __str__(self):
         return self.name
