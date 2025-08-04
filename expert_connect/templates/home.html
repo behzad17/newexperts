@@ -36,7 +36,7 @@
               <span class="likes-count">❤️ {{ expert.likes_count }} likes</span>
             </div>
           </div>
-          <p class="card-description">{{ expert.bio|truncatewords:12 }}</p>
+          <p class="card-description">{{ expert.bio|truncatewords:10 }}</p>
           <div class="card-actions">
             <a
               href="{% url 'profile_detail' expert.user.id %}"
@@ -89,7 +89,7 @@
             </div>
           </div>
           <p class="card-description">
-            {{ podcast.description|truncatewords:12 }}
+            {{ podcast.description|truncatewords:10 }}
           </p>
           <div class="card-actions">
             <a
