@@ -289,7 +289,7 @@
 
   .expert-actions {
     display: flex;
-    flex-direction: row; /* Changed to horizontal layout */
+    flex-direction: column; /* Changed to vertical layout */
     gap: 0.5rem;
     flex-shrink: 0; /* Keep actions at bottom */
     margin-top: auto; /* Push to bottom */
@@ -298,10 +298,11 @@
   .expert-actions .btn {
     flex: 1; /* Equal width for both buttons */
     text-align: center;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.8rem;
-    border-radius: 6px;
+    padding: 0.3rem 0.5rem; /* Much smaller padding */
+    font-size: 0.7rem; /* Much smaller font size */
+    border-radius: 4px; /* Smaller border radius */
     font-weight: 500;
+    width: 100%; /* Full width for vertical layout */
   }
 
   /* No Results */
@@ -359,16 +360,22 @@
     }
 
     .expert-card {
-      max-height: 530px; /* Increased from 480px to 530px (+50px) */
+      max-height: 550px; /* Updated to match mobile */
     }
 
     .expert-image {
       height: 160px; /* Smaller image for tablet */
     }
 
+    .expert-actions {
+      flex-direction: column; /* Keep vertical on tablet */
+      gap: 0.5rem;
+    }
+
     .expert-actions .btn {
-      padding: 0.7rem 1rem;
-      font-size: 0.85rem;
+      width: 100%;
+      padding: 0.3rem 0.5rem; /* Keep small size */
+      font-size: 0.7rem;
     }
   }
 
@@ -392,49 +399,57 @@
     }
 
     .expert-card {
-      max-height: 520px; /* Increased from 470px to 520px (+50px) */
+      max-height: 550px; /* Updated to match mobile */
     }
 
     .expert-image {
-      height: 150px;
+      height: 150px; /* Smaller image for desktop */
+    }
+
+    .expert-content {
+      padding: 2rem;
     }
 
     .expert-header h3 {
       font-size: 1.4rem;
     }
 
+    .expert-actions {
+      flex-direction: column; /* Keep vertical on desktop */
+      gap: 0.5rem;
+    }
+
     .expert-actions .btn {
-      padding: 0.8rem 1.2rem;
-      font-size: 0.9rem;
+      width: 100%;
+      padding: 0.3rem 0.5rem; /* Keep small size */
+      font-size: 0.7rem;
     }
   }
 
   /* Large Desktop Styles (1440px and up) */
   @media (min-width: 1440px) {
-    .experts-container {
-      max-width: 1400px;
-    }
-
     .experts-grid {
       grid-template-columns: repeat(4, 1fr);
       gap: 3rem;
     }
 
     .expert-card {
-      max-height: 510px; /* Increased from 460px to 510px (+50px) */
+      max-height: 550px; /* Updated to match mobile */
     }
 
     .expert-image {
-      height: 140px;
+      height: 140px; /* Smallest image for large desktop */
     }
 
-    .expert-header h3 {
-      font-size: 1.5rem;
+    .expert-actions {
+      flex-direction: column; /* Keep vertical on large desktop */
+      gap: 0.5rem;
     }
 
     .expert-actions .btn {
-      padding: 0.9rem 1.4rem;
-      font-size: 1rem;
+      width: 100%;
+      padding: 0.3rem 0.5rem; /* Keep small size */
+      font-size: 0.7rem;
     }
   }
 
