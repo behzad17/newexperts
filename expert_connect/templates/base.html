@@ -423,13 +423,55 @@
           padding: 2rem;
         }
 
+        .header-container {
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: center;
+        }
+
         header h1 {
           font-size: 2rem;
           margin-bottom: 0;
+          flex: 0 0 auto;
+        }
+
+        /* Hide hamburger on desktop */
+        .hamburger {
+          display: none;
         }
 
         nav {
+          display: flex !important;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          flex-wrap: wrap;
           gap: 1.5rem;
+          width: auto;
+          margin-top: 0;
+          padding-top: 0;
+          border-top: none;
+          flex: 1;
+          margin-left: 2rem;
+        }
+
+        nav a {
+          width: auto;
+          max-width: none;
+        }
+
+        .create-profile-link {
+          width: auto;
+          max-width: none;
+        }
+
+        .logout-form {
+          width: auto;
+          max-width: none;
+        }
+
+        .logout-btn {
+          width: auto;
         }
 
         main {
