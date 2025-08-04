@@ -51,6 +51,7 @@
                     <h3><a href="{% url 'profile_detail' expert.user.id %}">{{ expert.name }}</a></h3>
                     <span class="category-badge">{{ expert.get_category_display }}</span>
                 </div>
+                <p class="expert-bio">{{ expert.bio|truncatewords:10 }}</p>
                 <div class="expert-stats">
                     <span class="likes-count">❤️ {{ expert.likes_count }} likes</span>
                 </div>
@@ -271,6 +272,18 @@
     font-size: 0.8rem;
     font-weight: 500;
     align-self: flex-start;
+  }
+
+  .expert-bio {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show 2 lines */
+    -webkit-box-orient: vertical;
   }
 
   .expert-stats {
