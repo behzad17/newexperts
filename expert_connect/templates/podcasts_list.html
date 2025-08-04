@@ -51,7 +51,7 @@
                     <h3><a href="{% url 'profile_detail' podcast.user.id %}">{{ podcast.name }}</a></h3>
                     <span class="category-badge">{{ podcast.get_category_display }}</span>
                 </div>
-                <p class="podcast-description">{{ podcast.description|truncatewords:25 }}</p>
+                <p class="podcast-description">{{ podcast.description|truncatewords:10 }}</p>
                 <div class="podcast-stats">
                     <span class="likes-count">❤️ {{ podcast.likes_count }} likes</span>
                 </div>
@@ -194,7 +194,7 @@
     border: 1px solid #e1e5e9;
     display: flex;
     flex-direction: column;
-    max-height: 500px; /* Fixed maximum height */
+    max-height: 550px; /* Fixed maximum height */
   }
 
   .podcast-card:hover {
@@ -310,8 +310,8 @@
   .podcast-actions .btn {
     width: 100%;
     text-align: center;
-    padding: 0.4rem 0.6rem; /* Much smaller padding */
-    font-size: 0.75rem; /* Much smaller font size */
+    padding: 0.3rem 0.5rem; /* Much smaller padding */
+    font-size: 0.7rem; /* Much smaller font size */
     min-width: auto; /* Remove min-width constraint */
     border-radius: 4px; /* Smaller border radius */
     font-weight: 500;
@@ -372,7 +372,7 @@
     }
 
     .podcast-card {
-      max-height: 480px; /* Slightly smaller for tablet */
+      max-height: 550px; /* Updated to match mobile */
     }
 
     .podcast-image {
@@ -380,15 +380,14 @@
     }
 
     .podcast-actions {
-      flex-direction: row;
+      flex-direction: column; /* Keep vertical on tablet */
       gap: 0.5rem;
     }
 
     .podcast-actions .btn {
-      width: auto;
-      flex: 1;
-      padding: 0.5rem 0.8rem; /* Slightly larger for tablet */
-      font-size: 0.8rem;
+      width: 100%;
+      padding: 0.3rem 0.5rem; /* Keep small size */
+      font-size: 0.7rem;
     }
   }
 
@@ -412,7 +411,7 @@
     }
 
     .podcast-card {
-      max-height: 460px; /* Even smaller for desktop */
+      max-height: 550px; /* Updated to match mobile */
     }
 
     .podcast-image {
@@ -431,9 +430,15 @@
       font-size: 1rem;
     }
 
+    .podcast-actions {
+      flex-direction: column; /* Keep vertical on desktop */
+      gap: 0.5rem;
+    }
+
     .podcast-actions .btn {
-      padding: 0.6rem 1rem; /* Larger for desktop */
-      font-size: 0.85rem;
+      width: 100%;
+      padding: 0.3rem 0.5rem; /* Keep small size */
+      font-size: 0.7rem;
     }
   }
 
@@ -445,16 +450,22 @@
     }
 
     .podcast-card {
-      max-height: 440px; /* Smallest for large desktop */
+      max-height: 550px; /* Updated to match mobile */
     }
 
     .podcast-image {
       height: 140px; /* Smallest image for large desktop */
     }
 
+    .podcast-actions {
+      flex-direction: column; /* Keep vertical on large desktop */
+      gap: 0.5rem;
+    }
+
     .podcast-actions .btn {
-      padding: 0.7rem 1.2rem; /* Largest for large desktop */
-      font-size: 0.9rem;
+      width: 100%;
+      padding: 0.3rem 0.5rem; /* Keep small size */
+      font-size: 0.7rem;
     }
   }
 
