@@ -180,6 +180,9 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@expertconnect.com')
 SERVER_EMAIL = os.getenv('SERVER_EMAIL', 'server@expertconnect.com')
 
+# Admin email for notifications
+ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', 'admin@expertconnect.com')
+
 # Social Account Settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
