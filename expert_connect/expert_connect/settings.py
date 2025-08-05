@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-fr*mb49u(*77xa#&f=_k*6ka3#+((=r!3&v119b#^1ln)2(_cg"
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-fr*mb49u(*77xa#&f=_k*6ka3#+((=r!3&v119b#^1ln)2(_cg')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 
 # Application definition
@@ -144,7 +149,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # django-allauth Configuration
-SITE_ID = 1
+SITE_ID = int(os.getenv('SITE_ID', '1'))
 
 AUTHENTICATION_BACKENDS = [
     # Django's built-in authentication backend
@@ -166,14 +171,12 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGIN_REDIRECT_URL = '/profile/create/'
 
 # Email Configuration (for email verification)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For development
-# For production, use SMTP:
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'your-email@gmail.com'
-# EMAIL_HOST_PASSWORD = 'your-app-password'
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True').lower() == 'true'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 
 # Social Account Settings
 SOCIALACCOUNT_PROVIDERS = {
@@ -218,9 +221,9 @@ SOCIALACCOUNT_EMAIL_VERIFICATION = False
 
 # Cloudinary Configuration
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'your-cloud-name',  # Replace with your Cloudinary cloud name
-    'API_KEY': 'your-api-key',        # Replace with your Cloudinary API key
-    'API_SECRET': 'your-api-secret',  # Replace with your Cloudinary API secret
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'your-cloud-name'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY', 'your-api-key'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'your-api-secret'),
 }
 
 # Media files configuration for Cloudinary
@@ -231,9 +234,9 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Cloudinary settings for image transformations
 CLOUDINARY = {
-    'cloud_name': 'your-cloud-name',  # Replace with your Cloudinary cloud name
-    'api_key': 'your-api-key',        # Replace with your Cloudinary API key
-    'api_secret': 'your-api-secret',  # Replace with your Cloudinary API secret
+    'cloud_name': os.getenv('CLOUDINARY_CLOUD_NAME', 'your-cloud-name'),
+    'api_key': os.getenv('CLOUDINARY_API_KEY', 'your-api-key'),
+    'api_secret': os.getenv('CLOUDINARY_API_SECRET', 'your-api-secret'),
 }
 
 AUTH_USER_MODEL = "core.User"

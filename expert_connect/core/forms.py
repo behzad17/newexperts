@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User, ExpertProfile, PodcastProfile, Comment, Message
 from cloudinary.forms import CloudinaryFileField
+import os
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -15,7 +16,7 @@ class CustomUserCreationForm(UserCreationForm):
 class ExpertProfileForm(forms.ModelForm):
     image = CloudinaryFileField(
         options={
-            'cloud_name': 'your-cloud-name',  # Replace with your cloud name
+            'cloud_name': os.getenv('CLOUDINARY_CLOUD_NAME', 'your-cloud-name'),
             'folder': 'expert_images',
             'transformation': [
                 {'width': 400, 'height': 400, 'crop': 'fill'},
@@ -41,7 +42,7 @@ class ExpertProfileForm(forms.ModelForm):
 class PodcastProfileForm(forms.ModelForm):
     image = CloudinaryFileField(
         options={
-            'cloud_name': 'your-cloud-name',  # Replace with your cloud name
+            'cloud_name': os.getenv('CLOUDINARY_CLOUD_NAME', 'your-cloud-name'),
             'folder': 'podcast_images',
             'transformation': [
                 {'width': 400, 'height': 400, 'crop': 'fill'},
