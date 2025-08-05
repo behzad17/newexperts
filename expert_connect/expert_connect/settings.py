@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.facebook",
     "allauth.socialaccount.providers.twitter",
+    
+    # Cloudinary
+    "cloudinary",
+    "cloudinary_storage",
 ]
 
 MIDDLEWARE = [
@@ -211,6 +215,26 @@ SOCIALACCOUNT_PROVIDERS = {
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_EMAIL_REQUIRED = False
 SOCIALACCOUNT_EMAIL_VERIFICATION = False
+
+# Cloudinary Configuration
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'your-cloud-name',  # Replace with your Cloudinary cloud name
+    'API_KEY': 'your-api-key',        # Replace with your Cloudinary API key
+    'API_SECRET': 'your-api-secret',  # Replace with your Cloudinary API secret
+}
+
+# Media files configuration for Cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Static files configuration for Cloudinary (optional)
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
+# Cloudinary settings for image transformations
+CLOUDINARY = {
+    'cloud_name': 'your-cloud-name',  # Replace with your Cloudinary cloud name
+    'api_key': 'your-api-key',        # Replace with your Cloudinary API key
+    'api_secret': 'your-api-secret',  # Replace with your Cloudinary API secret
+}
 
 AUTH_USER_MODEL = "core.User"
 
