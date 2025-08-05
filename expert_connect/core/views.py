@@ -228,15 +228,120 @@ def conversation_detail(request, user_id):
 
 @login_required
 def send_message(request, user_id):
-    receiver = get_object_or_404(User, id=user_id)
+    recipient = get_object_or_404(User, id=user_id)
+    
     if request.method == "POST":
         form = MessageForm(request.POST)
         if form.is_valid():
             message = form.save(commit=False)
             message.sender = request.user
-            message.receiver = receiver
+            message.recipient = recipient
             message.save()
             return redirect("conversation_detail", user_id=user_id)
     else:
         form = MessageForm()
-    return render(request, "send_message.html", {"form": form})
+    
+    context = {
+        "form": form,
+        "recipient": recipient,
+    }
+    return render(request, "send_message.html", context)
+
+
+# Profile Management Views
+@login_required
+def edit_profile(request):
+    """Allow users to edit their own profile"""
+    try:
+        if request.user.user_type == "expert":
+            profile = ExpertProfile.objects.get(user=request.user)
+            form_class = ExpertProfileForm
+        else:
+            profile = PodcastProfile.objects.get(user=request.user)
+            form_class = PodcastProfileForm
+    except (ExpertProfile.DoesNotExist, PodcastProfile.DoesNotExist):
+        return redirect("create_profile")
+    
+    if request.method == "POST":
+        form = form_class(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect("profile_detail", user_id=request.user.id)
+    else:
+        form = form_class(instance=profile)
+    
+    context = {
+        "form": form,
+        "profile": profile,
+    }
+    return render(request, "edit_profile.html", context)
+
+
+@login_required
+def delete_profile(request):
+    """Allow users to delete their own profile"""
+    try:
+        if request.user.user_type == "expert":
+            profile = ExpertProfile.objects.get(user=request.user)
+        else:
+            profile = PodcastProfile.objects.get(user=request.user)
+    except (ExpertProfile.DoesNotExist, PodcastProfile.DoesNotExist):
+        return redirect("home")
+    
+    if request.method == "POST":
+        # Delete the profile
+        profile.delete()
+        # Optionally delete the user account as well
+        # request.user.delete()
+        return redirect("home")
+    
+    context = {
+        "profile": profile,
+    }
+    return render(request, "delete_profile.html", context)
+
+
+# Comment Management Views
+@login_required
+def edit_comment(request, comment_id):
+    """Allow users to edit their own comments"""
+    comment = get_object_or_404(Comment, id=comment_id)
+    
+    # Check if the user owns this comment
+    if comment.user != request.user:
+        return redirect("profile_detail", user_id=comment.content_object.user.id)
+    
+    if request.method == "POST":
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return redirect("profile_detail", user_id=comment.content_object.user.id)
+    else:
+        form = CommentForm(instance=comment)
+    
+    context = {
+        "form": form,
+        "comment": comment,
+    }
+    return render(request, "edit_comment.html", context)
+
+
+@login_required
+def delete_comment(request, comment_id):
+    """Allow users to delete their own comments"""
+    comment = get_object_or_404(Comment, id=comment_id)
+    
+    # Check if the user owns this comment
+    if comment.user != request.user:
+        return redirect("profile_detail", user_id=comment.content_object.user.id)
+    
+    if request.method == "POST":
+        # Store the profile user ID before deleting the comment
+        profile_user_id = comment.content_object.user.id
+        comment.delete()
+        return redirect("profile_detail", user_id=profile_user_id)
+    
+    context = {
+        "comment": comment,
+    }
+    return render(request, "delete_comment.html", context)

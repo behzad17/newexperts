@@ -1,0 +1,130 @@
+{% extends "base.html" %} {% block content %}
+<div class="edit-comment-container">
+  <div class="edit-comment-card">
+    <h2>Edit Comment</h2>
+
+    <div class="comment-context">
+      <h4>Comment on:</h4>
+      <p><strong>{{ comment.content_object.name }}</strong>'s profile</p>
+    </div>
+
+    <form method="post" class="edit-comment-form">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="{{ form.text.id_for_label }}">Comment:</label>
+        {{ form.text }} {% if form.text.errors %}
+        <div class="error-message">{{ form.text.errors.0 }}</div>
+        {% endif %}
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a
+          href="{% url 'profile_detail' comment.content_object.user.id %}"
+          class="btn btn-secondary"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .edit-comment-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .edit-comment-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+
+  .edit-comment-card h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+
+  .comment-context {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .comment-context h4 {
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+  }
+
+  .comment-context p {
+    color: #2c3e50;
+    font-weight: 500;
+  }
+
+  .edit-comment-form {
+    margin-top: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .form-group textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  }
+
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .edit-comment-container {
+      margin: 1rem;
+    }
+
+    .edit-comment-card {
+      padding: 1.5rem;
+    }
+
+    .form-actions {
+      flex-direction: column;
+    }
+  }
+</style>
+{% endblock %}

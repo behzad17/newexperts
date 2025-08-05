@@ -1,0 +1,161 @@
+{% extends "base.html" %} {% block content %}
+<div class="delete-profile-container">
+  <div class="delete-profile-card">
+    <h2>Delete Your Profile</h2>
+
+    <div class="warning-message">
+      <h3>⚠️ Warning</h3>
+      <p>
+        Are you sure you want to delete your profile? This action cannot be
+        undone.
+      </p>
+      <p>This will permanently remove:</p>
+      <ul>
+        <li>Your profile information</li>
+        <li>Your profile image</li>
+        <li>All your comments</li>
+        <li>All your likes and favorites</li>
+      </ul>
+      <p>
+        <strong>Note:</strong> Your user account will remain active, but you'll
+        need to create a new profile to use the platform.
+      </p>
+    </div>
+
+    <div class="profile-summary">
+      <h4>Profile to be deleted:</h4>
+      <div class="profile-info">
+        <p><strong>Name:</strong> {{ profile.name }}</p>
+        <p><strong>Category:</strong> {{ profile.get_category_display }}</p>
+        {% if profile.bio %}
+        <p><strong>Bio:</strong> {{ profile.bio|truncatewords:20 }}</p>
+        {% endif %} {% if profile.description %}
+        <p>
+          <strong>Description:</strong> {{ profile.description|truncatewords:20
+          }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <form method="post" class="delete-form">
+      {% csrf_token %}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-danger">
+          Yes, Delete My Profile
+        </button>
+        <a href="{% url 'profile_detail' user.id %}" class="btn btn-secondary"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .delete-profile-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .delete-profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .delete-profile-card h2 {
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+  }
+
+  .warning-message {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .warning-message h3 {
+    color: #856404;
+    margin-bottom: 1rem;
+  }
+
+  .warning-message p {
+    color: #856404;
+    margin-bottom: 1rem;
+  }
+
+  .warning-message ul {
+    color: #856404;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .warning-message li {
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-summary {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .profile-summary h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .profile-info p {
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+  }
+
+  .delete-form {
+    margin-top: 2rem;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-danger {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-danger:hover {
+    background: #c0392b;
+  }
+
+  @media (max-width: 768px) {
+    .delete-profile-container {
+      margin: 1rem;
+    }
+
+    .delete-profile-card {
+      padding: 1.5rem;
+    }
+
+    .form-actions {
+      flex-direction: column;
+    }
+  }
+</style>
+{% endblock %}

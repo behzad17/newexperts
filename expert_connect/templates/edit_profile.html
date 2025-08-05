@@ -1,0 +1,146 @@
+{% extends "base.html" %} {% block content %}
+<div class="edit-profile-container">
+  <h2>Edit Your Profile</h2>
+
+  <form method="post" enctype="multipart/form-data" class="profile-form">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="{{ form.name.id_for_label }}">Name:</label>
+      {{ form.name }} {% if form.name.errors %}
+      <div class="error-message">{{ form.name.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label for="{{ form.category.id_for_label }}">Category:</label>
+      {{ form.category }} {% if form.category.errors %}
+      <div class="error-message">{{ form.category.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label for="{{ form.image.id_for_label }}">Profile Image:</label>
+      <div class="image-upload-container">
+        {{ form.image }}
+        <div class="upload-hint">
+          Upload a new profile picture (JPG, PNG, GIF)
+        </div>
+        {% if profile.image %}
+        <div class="current-image">
+          <p>Current image: {{ profile.image.name }}</p>
+        </div>
+        {% endif %}
+      </div>
+      {% if form.image.errors %}
+      <div class="error-message">{{ form.image.errors.0 }}</div>
+      {% endif %}
+    </div>
+
+    {% if form.bio %}
+    <div class="form-group">
+      <label for="{{ form.bio.id_for_label }}">Bio:</label>
+      {{ form.bio }} {% if form.bio.errors %}
+      <div class="error-message">{{ form.bio.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %} {% if form.description %}
+    <div class="form-group">
+      <label for="{{ form.description.id_for_label }}">Description:</label>
+      {{ form.description }} {% if form.description.errors %}
+      <div class="error-message">{{ form.description.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Expert Profile Additional Fields -->
+    {% if form.email %}
+    <div class="form-group">
+      <label for="{{ form.email.id_for_label }}">Professional Email:</label>
+      {{ form.email }} {% if form.email.errors %}
+      <div class="error-message">{{ form.email.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %} {% if form.website_url %}
+    <div class="form-group">
+      <label for="{{ form.website_url.id_for_label }}">Website URL:</label>
+      {{ form.website_url }} {% if form.website_url.errors %}
+      <div class="error-message">{{ form.website_url.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %} {% if form.linkedin_url %}
+    <div class="form-group">
+      <label for="{{ form.linkedin_url.id_for_label }}">LinkedIn URL:</label>
+      {{ form.linkedin_url }} {% if form.linkedin_url.errors %}
+      <div class="error-message">{{ form.linkedin_url.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %} {% if form.twitter_url %}
+    <div class="form-group">
+      <label for="{{ form.twitter_url.id_for_label }}">Twitter/X URL:</label>
+      {{ form.twitter_url }} {% if form.twitter_url.errors %}
+      <div class="error-message">{{ form.twitter_url.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %} {% if form.instagram_url %}
+    <div class="form-group">
+      <label for="{{ form.instagram_url.id_for_label }}">Instagram URL:</label>
+      {{ form.instagram_url }} {% if form.instagram_url.errors %}
+      <div class="error-message">{{ form.instagram_url.errors.0 }}</div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+      <a href="{% url 'profile_detail' user.id %}" class="btn btn-secondary"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
+
+<style>
+  .edit-profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .edit-profile-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .current-image {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+
+  @media (max-width: 768px) {
+    .edit-profile-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+
+    .form-actions {
+      flex-direction: column;
+    }
+  }
+</style>
+{% endblock %}

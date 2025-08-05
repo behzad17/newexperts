@@ -1,0 +1,146 @@
+{% extends "base.html" %} {% block content %}
+<div class="delete-comment-container">
+  <div class="delete-comment-card">
+    <h2>Delete Comment</h2>
+
+    <div class="warning-message">
+      <h3>⚠️ Warning</h3>
+      <p>
+        Are you sure you want to delete this comment? This action cannot be
+        undone.
+      </p>
+    </div>
+
+    <div class="comment-summary">
+      <h4>Comment to be deleted:</h4>
+      <div class="comment-info">
+        <p><strong>On:</strong> {{ comment.content_object.name }}'s profile</p>
+        <p><strong>Your comment:</strong></p>
+        <div class="comment-text">"{{ comment.text }}"</div>
+        <p><strong>Posted:</strong> {{ comment.created_at|date:"F j, Y" }}</p>
+      </div>
+    </div>
+
+    <form method="post" class="delete-form">
+      {% csrf_token %}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-danger">
+          Yes, Delete Comment
+        </button>
+        <a
+          href="{% url 'profile_detail' comment.content_object.user.id %}"
+          class="btn btn-secondary"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .delete-comment-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .delete-comment-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .delete-comment-card h2 {
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+  }
+
+  .warning-message {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .warning-message h3 {
+    color: #856404;
+    margin-bottom: 0.5rem;
+  }
+
+  .warning-message p {
+    color: #856404;
+    margin: 0;
+  }
+
+  .comment-summary {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .comment-summary h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .comment-info p {
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+  }
+
+  .comment-text {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 0.5rem 0 1rem 0;
+    font-style: italic;
+    color: #2c3e50;
+  }
+
+  .delete-form {
+    margin-top: 2rem;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-danger {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-danger:hover {
+    background: #c0392b;
+  }
+
+  @media (max-width: 768px) {
+    .delete-comment-container {
+      margin: 1rem;
+    }
+
+    .delete-comment-card {
+      padding: 1.5rem;
+    }
+
+    .form-actions {
+      flex-direction: column;
+    }
+  }
+</style>
+{% endblock %}
