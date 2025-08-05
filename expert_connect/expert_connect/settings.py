@@ -37,7 +37,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",  # Required for django-allauth
     "core.apps.CoreConfig",
+    
+    # django-allauth
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.twitter",
 ]
 
 MIDDLEWARE = [
@@ -48,6 +57,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",  # django-allauth middleware
 ]
 
 ROOT_URLCONF = "expert_connect.urls"
@@ -128,6 +138,79 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# django-allauth Configuration
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = [
+    # Django's built-in authentication backend
+    'django.contrib.auth.backends.ModelBackend',
+    # django-allauth authentication backend
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# django-allauth Account Settings
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_USERNAME_MIN_LENGTH = 3
+ACCOUNT_PASSWORD_MIN_LENGTH = 8
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_LOGIN_REDIRECT_URL = '/profile/create/'
+
+# Email Configuration (for email verification)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For development
+# For production, use SMTP:
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your-app-password'
+
+# Social Account Settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+    },
+    'twitter': {
+        'SCOPE': ['email'],
+    }
+}
+
+# Social Account Auto Signup
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_EMAIL_VERIFICATION = False
 
 AUTH_USER_MODEL = "core.User"
 
