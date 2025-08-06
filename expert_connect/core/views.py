@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.contenttypes.models import ContentType
 from django.http import JsonResponse
 from django.db.models import Q
 from django.utils import timezone
+from django.contrib import messages
 from .forms import CustomUserCreationForm, ExpertProfileForm, PodcastProfileForm, CommentForm, MessageForm
 from .models import User, ExpertProfile, PodcastProfile, Like, Favorite, Comment, Message
 
@@ -32,10 +32,40 @@ def register(request):
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            # Specify the authentication backend explicitly
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            return redirect("create_profile")
+            user = form.save(commit=False)
+            user.is_active = False  # User must verify email before activation
+            user.save()
+            
+            # Create email address record for allauth
+            from allauth.account.models import EmailAddress
+            email_address = EmailAddress.objects.create(
+                user=user,
+                email=user.email,
+                primary=True,
+                verified=False
+            )
+            
+            # Send email verification using allauth's adapter
+            from allauth.account.adapter import get_adapter
+            adapter = get_adapter()
+            
+            # Create a request with site information
+            from django.contrib.sites.models import Site
+            request.site = Site.objects.get_current()
+            
+            # Create email confirmation and send
+            from allauth.account.models import EmailConfirmation
+            email_confirmation = EmailConfirmation.objects.create(
+                email_address=email_address
+            )
+            adapter.send_confirmation_mail(request, email_confirmation, signup=True)
+            
+            messages.success(
+                request, 
+                "Registration successful! Please check your email to verify "
+                "your account before logging in."
+            )
+            return redirect("account_login")
     else:
         form = CustomUserCreationForm()
     return render(request, "registration/register.html", {"form": form})
