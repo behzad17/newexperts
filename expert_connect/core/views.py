@@ -36,20 +36,9 @@ def register(request):
             user.is_active = False  # User must verify email before activation
             user.save()
             
-            # Create email address record for allauth
-            from allauth.account.models import EmailAddress
-            email_address = EmailAddress.objects.create(
-                user=user,
-                email=user.email,
-                primary=True,
-                verified=False
-            )
-            
-            # Create email confirmation object
-            from allauth.account.models import EmailConfirmation
-            email_confirmation = EmailConfirmation.objects.create(
-                email_address=email_address
-            )
+            # Use allauth's setup_user_email to properly handle email confirmation
+            from allauth.account.utils import setup_user_email
+            setup_user_email(request, user, [])
             
             # Send email verification using allauth's adapter
             from allauth.account.adapter import get_adapter
@@ -59,8 +48,10 @@ def register(request):
             from django.contrib.sites.models import Site
             request.site = Site.objects.get_current()
             
-            # Send confirmation email with the EmailConfirmation object
-            adapter.send_confirmation_mail(request, email_confirmation, signup=True)
+            # Get the email address and send confirmation
+            from allauth.account.models import EmailAddress
+            email_address = EmailAddress.objects.get(user=user, primary=True)
+            adapter.send_confirmation_mail(request, email_address, signup=True)
             
             messages.success(
                 request, 
