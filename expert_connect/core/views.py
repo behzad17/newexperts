@@ -53,12 +53,9 @@ def register(request):
             from django.contrib.sites.models import Site
             request.site = Site.objects.get_current()
             
-            # Create email confirmation and send
-            from allauth.account.models import EmailConfirmation
-            email_confirmation = EmailConfirmation.objects.create(
-                email_address=email_address
-            )
-            adapter.send_confirmation_mail(request, email_confirmation, signup=True)
+            # Use allauth's built-in method to send confirmation email
+            # This will automatically generate a unique key
+            adapter.send_confirmation_mail(request, email_address, signup=True)
             
             messages.success(
                 request, 
