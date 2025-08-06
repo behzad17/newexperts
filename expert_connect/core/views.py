@@ -45,14 +45,6 @@ def register(request):
                 verified=False
             )
             
-            # Create email confirmation object with proper key generation
-            from allauth.account.models import EmailConfirmation
-            from allauth.account.utils import generate_emailconfirmation_key
-            email_confirmation = EmailConfirmation.objects.create(
-                email_address=email_address,
-                key=generate_emailconfirmation_key()
-            )
-            
             # Send email verification using allauth's adapter
             from allauth.account.adapter import get_adapter
             adapter = get_adapter()
@@ -61,8 +53,9 @@ def register(request):
             from django.contrib.sites.models import Site
             request.site = Site.objects.get_current()
             
-            # Send confirmation email with the EmailConfirmation object
-            adapter.send_confirmation_mail(request, email_confirmation, signup=True)
+            # Use the adapter's method to send confirmation email
+            # This will automatically create the EmailConfirmation with proper key
+            adapter.send_confirmation_mail(request, email_address, signup=True)
             
             messages.success(
                 request, 
